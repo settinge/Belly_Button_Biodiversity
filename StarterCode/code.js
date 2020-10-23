@@ -1,16 +1,14 @@
-// d3.json("samples.json").then(function(data) {
-//     console.log(data);
-// });
 
-// function unpack(rows, index) {
-//     return rows.map(function(row) {
-//         return row[index];
-//     });
-// };
+//selects metadata in samples.json
+//gets the first id number per sample
+//for each key, value in sample data
+// appends each pair to box
+
 function buildMetadata(sample_id){
     d3.json("samples.json").then(function(data){
         var meta=data.metadata;
         var result=meta.filter(oneMeta=>oneMeta.id==sample_id)[0];
+        console.log(result);
         var demographic_data=d3.select('#sample-metadata');
         demographic_data.html('');
         Object.entries(result).forEach(([key, value]) => {
@@ -22,29 +20,43 @@ function buildMetadata(sample_id){
 function buildChart(sample_id){
     // load the data
     d3.json("samples.json").then(function(data) {
-        // console.log(data);
+
+        // selects first sample per sample id
+
         var samples=data.samples;
         var result=samples.filter(sample=>sample.id==sample_id)[0];
-        // console.log(result);
-        // var otu_ids=result.otu_ids;
-        // var otu_labels=result.otu_labels;
-        // var sample_values=result.sample_values;
-        // console.log(sample_values);
+      
         var barData={
-            // y: otu_ids.slice(0, 10).map(otuID=>`OTU ${otuID}`).reverse(), 
+
+            // gets each otu id per sample and adds it to the y axis
+            // gets each sample value per otu id and adds it to the x axis
+            // adds otu labels to y axis
+
             y: result.otu_ids.slice(0, 10).map(otuID=>`OTU ${otuID}`).reverse(), 
             x: result.sample_values.slice(0, 10).reverse(), 
             text: result.otu_labels.slice(0, 10).reverse(),
             type: 'bar', 
             orientation: 'h'
         };
+
+        // adds styling to chart
+
         var barLayout={
             title: 'Top 10 Bacteria Cultures Found', 
             margin: {
                 t: 30
             }
         };
+
+        //creates bar chart
+     
+
         Plotly.newPlot('bar', [barData], barLayout);
+
+
+        // creates framework for bubble chart
+        //size is determined by sample value
+
         var bubbleData={
             x: result.otu_ids, 
             y: result.sample_values, 
@@ -56,6 +68,9 @@ function buildChart(sample_id){
                 colorScale: 'Earth'
             }
         }
+
+        // adds styling to bubble chart
+
         var bubbleLayout={
             title: 'Bacteria Cultures Per Sample', 
             margin: {
@@ -70,6 +85,12 @@ function buildChart(sample_id){
     });
 };
 
+
+// selects dropdown menu
+// appends each id value selected (first)
+// to dropdown menu
+// builds charts for each id
+
 var dropMenu = d3.select("#selDataset");
 d3.json("samples.json").then(function(data) {
     var all_ids=data.names;
@@ -83,51 +104,11 @@ d3.json("samples.json").then(function(data) {
     buildChart(firstId);
     buildMetadata(firstId);
 });
-// console.log(dropMenu);
+// if there is a new id create new bar chart and bubble chary
+// along with box with id data
 
 function optionChanged(newId){
     buildChart(newId);
     buildMetadata(newId);
 };
-        // d.on("click", function () {
-        //     window.event.preventDefault();
-            
-        //     var inputElement = d3.select("sample-metadata");
-          
-          
-        //     var inputValue = inputElement.property("value");
-            
-        //     var filteredData = samples.filter(samples => samples.id===inputValue);
-        //     var samples=filteredData;
-        //     var filteredOTUS=samples.filter(samples=>samples.otu_ids===inputValue);
-          
-        //     console.log(samples);
-        //     console.log(filteredData);
-
-        //     var trace1 = {
-        //         type: "bar",
-        //         x: samples,
-        //         y: filteredOTUS
-        //       };
-
-        //     var data = [trace1];
-        //     var layout = {
-        //         title: "Sample Values and OTU Ids",
-        //         xaxis: { title: "OTU Ids" },
-        //         yaxis: { title: "Sample Values"}
-        //       };
-        //     Plotly.newPlot("bar", data, layout);
-        // });
-        // console.log(samples);
-        // do array.filter() to find just sample for the sample_id
-
-        // set sample_values to be equal to filtered_data.sample_values
-
-        // var barData=[x, y, type, orientation]
-
-        // var barLayout=[title]
-
-        // Plotly.newPlot('id_for_html_element', barData, barLayout)
-
-
-// buildChart(940);
+      
