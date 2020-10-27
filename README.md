@@ -6,6 +6,14 @@ which catalogs the microbes that colonize human navels.
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, 
 while the rest were relatively rare.
 
+## How to Run Code
+
+1). Pull Github repository down into a folder you have created
+2). Navigate to the Github repository in your source code editor (VSCode, PyCharm etc).
+3). Navigate into StarterCode>index.html
+4). Right click on index.html and choose the option to "open with live server"
+5). Enjoy!
+
 ## Overview
 
 1. Used the D3 library to read in `samples.json`.
