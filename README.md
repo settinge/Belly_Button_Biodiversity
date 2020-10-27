@@ -8,11 +8,15 @@ while the rest were relatively rare.
 
 ## How to Run Code
 
-1). Pull Github repository down into a folder you have created
-2). Navigate to the Github repository in your source code editor (VSCode, PyCharm etc).
-3). Navigate into StarterCode>index.html
-4). Right click on index.html and choose the option to "open with live server"
-5). Enjoy!
+1. Pull Github repository down into a folder you have created
+
+2. Navigate to the Github repository in your source code editor (VSCode, PyCharm etc)
+
+3. Navigate into StarterCode>index.html
+
+4. Right click on index.html and choose the option to "open with live server"
+
+5. Enjoy!
 
 ## Overview
 
