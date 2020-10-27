@@ -20,4 +20,4 @@ while the rest were relatively rare.
 
 6. Updated all of the plots any time that a new sample is selected.
 
-![alt text](https://github.com/[settinge]/[Plotly]/blob/[master]/belly_button_bio.jpg?raw=true)
+![Screenshot](belly_button_bio.jpg)
