@@ -20,4 +20,12 @@ while the rest were relatively rare.
 
 6. Updated all of the plots any time that a new sample is selected.
 
+## Screenshots
+
+Below is a screenshot of the bar showing belly button bar chart showing top 10 bacteria cultures per sample
+
 ![ScreenShot](belly_button_bio.JPG)
+
+Below is a screenshot of the bubble chart showing the number of bacteria cultures per otu id.
+
+![ScreenShot](Bubble_Chart.JPG)
