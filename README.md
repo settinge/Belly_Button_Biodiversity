@@ -22,10 +22,10 @@ while the rest were relatively rare.
 
 ## Screenshots
 
-Below is a screenshot of the bar showing belly button bar chart showing top 10 bacteria cultures per sample
+Below is a screenshot of the belly button bar chart on the webpage showing top 10 bacteria cultures per sample. The reason this data was visualized using an inversed bar chart was because I wanted to highlight the OTU ids and because there is a limited range of number of bacteria cultures among the top ten samples, I figured I would put the OTU ids on the y axis. 
 
 ![ScreenShot](belly_button_bio.JPG)
 
-Below is a screenshot of the bubble chart showing the number of bacteria cultures per otu id.
+Below is a screenshot of the bubble chart on the webpage showing the number of bacteria cultures per otu id. The reason I used a bubble chart to display this data was because I wanted to highlight both the number of bacteria cultures found and variability in amount of bacteria cultures.
 
 ![ScreenShot](Bubble_Chart.JPG)
