@@ -21,3 +21,4 @@ while the rest were relatively rare.
 6. Updated all of the plots any time that a new sample is selected.
 
 
+![Alt text]("..//images//belly_button_bio.jpg?raw=true "Optional Title")
